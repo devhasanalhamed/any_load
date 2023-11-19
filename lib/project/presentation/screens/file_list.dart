@@ -1,5 +1,5 @@
-import 'package:any_load/check_permissions.dart';
-import 'package:any_load/title_list.dart';
+import 'package:any_load/core/utils/check_permissions.dart';
+import 'package:any_load/project/presentation/components/title_list.dart';
 import 'package:flutter/material.dart';
 
 class FileList extends StatefulWidget {

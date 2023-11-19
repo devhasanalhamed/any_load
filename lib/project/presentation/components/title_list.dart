@@ -1,7 +1,7 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:any_load/directory_path.dart';
+import 'package:any_load/core/utils/directory_path.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:open_file_plus/open_file_plus.dart';
