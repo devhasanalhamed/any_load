@@ -35,7 +35,7 @@ class _TitleListState extends State<TitleList> {
     try {
       log(widget.fileUrl);
       await Dio().download(
-        'https://www.iso.org/files/live/sites/isoorg/files/store/en/PUB100080.pdf',
+        widget.fileUrl,
         filePath,
         onReceiveProgress: (count, total) {
           setState(() {
