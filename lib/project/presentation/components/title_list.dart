@@ -95,11 +95,15 @@ class _TitleListState extends State<TitleList> {
         leading: IconButton(
           onPressed: () {
             fileExists && downloading == false
-                ? debugPrint('file exist')
+                ? File(filePath).delete().then((value) {
+                    debugPrint('deleted');
+                    checkFile();
+                    setState(() {});
+                  })
                 : cancelDownload();
           },
           icon: fileExists && downloading == false
-              ? const Icon(Icons.play_arrow)
+              ? const Icon(Icons.delete)
               : const Icon(Icons.close),
         ),
         trailing: IconButton(
