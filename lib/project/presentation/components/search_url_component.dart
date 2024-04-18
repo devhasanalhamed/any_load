@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
 
 class SearchUrlComponent extends StatefulWidget {
   const SearchUrlComponent({Key? key}) : super(key: key);
@@ -9,19 +8,8 @@ class SearchUrlComponent extends StatefulWidget {
 }
 
 class SearchUrlComponentState extends State<SearchUrlComponent> {
-  late VideoPlayerController controller;
   @override
   void initState() {
-    controller = VideoPlayerController.networkUrl(
-      Uri.parse(
-        'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',
-      ),
-    )
-      ..initialize()
-      ..play()
-      ..setLooping(true).then((value) {
-        setState(() {});
-      });
     super.initState();
   }
 
@@ -53,8 +41,6 @@ class SearchUrlComponentState extends State<SearchUrlComponent> {
               ),
             ),
           ),
-          if (controller.value.isInitialized)
-            AspectRatio(aspectRatio: 16 / 9, child: VideoPlayer(controller)),
         ],
       ),
     );
