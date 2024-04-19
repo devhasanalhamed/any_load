@@ -1,3 +1,4 @@
+import 'package:cached_video_player/cached_video_player.dart';
 import 'package:flutter/material.dart';
 
 class SearchUrlComponent extends StatefulWidget {
@@ -8,8 +9,19 @@ class SearchUrlComponent extends StatefulWidget {
 }
 
 class SearchUrlComponentState extends State<SearchUrlComponent> {
+<<<<<<< Updated upstream
   @override
   void initState() {
+=======
+  late CachedVideoPlayerController controller;
+  @override
+  void initState() {
+    controller = CachedVideoPlayerController.network(
+        'http://10.0.2.2:8000/api/file/pDqgRbnN9rU5MIODyDimxFtR1XuVMyxP.mp4')
+      ..initialize().then((value) {
+        setState(() {});
+      });
+>>>>>>> Stashed changes
     super.initState();
   }
 
@@ -41,6 +53,14 @@ class SearchUrlComponentState extends State<SearchUrlComponent> {
               ),
             ),
           ),
+<<<<<<< Updated upstream
+=======
+          if (controller.value.isInitialized)
+            AspectRatio(
+              aspectRatio: 16 / 9,
+              child: CachedVideoPlayer(controller),
+            ),
+>>>>>>> Stashed changes
         ],
       ),
     );
